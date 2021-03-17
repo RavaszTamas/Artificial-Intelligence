@@ -1,0 +1,1 @@
+Average Fitness EA, standard deviation EA = 22.11,4.11 Average Fitness Hill cimbing, standard deviation Hill climbing = 11.70,3.30 Average Fitness PSO, standard deviation PSO = 28.72,1.76

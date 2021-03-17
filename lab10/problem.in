@@ -1,0 +1,79 @@
+{ "problem_details":[
+	{	
+		"definition_charts" : [ {
+			"name": "temperature",
+			"values" : [
+				{
+					"name" : "very cold", "region":[-30,-30,-20,5]
+				},
+				{
+					"name" : "cold", "region":[-5,0,0,10]
+				},
+				{
+					"name" : "normal", "region":[5,10,15,20]
+				},
+				{
+					"name" : "warm", "region":[15,20,20,25]
+				},
+				{
+					"name" : "hot", "region":[25,30,35,35]
+				}
+				]
+			},
+			{
+			"name": "humidity",
+			"values" : [
+				{
+					"name" : "dry", "region":[0,0,0,50]
+				},
+				{
+					"name" : "normal", "region":[0,50,50,100]
+				},
+				{
+					"name" : "wet", "region":[50,100,100,100]
+				}
+				]
+			}			
+			],
+
+			"output":{
+			"name": "time",
+			"values" : [
+				{
+					"name" : "short", "region":[0,0,0,50]
+				},
+				{
+					"name" : "medium", "region":[0,50,50,100]
+				},
+				{
+					"name" : "long", "region":[50,100,100,100]
+				}
+			]
+
+		}
+	},
+	{	"rules" : [
+		{"premise":[{"name":"temperature", "value":"very cold"}, {"name":"humidity", "value":"wet"}], "conclusion" : {"name":"time", "value":"short"}},
+		{"premise":[{"name":"temperature", "value":"cold"}, {"name":"humidity", "value":"wet"}], "conclusion" : {"name":"time", "value":"short"}},
+		{"premise":[{"name":"temperature", "value":"normal"}, {"name":"humidity", "value":"wet"}], "conclusion" : {"name":"time", "value":"short"}},
+		{"premise":[{"name":"temperature", "value":"warm"}, {"name":"humidity", "value":"wet"}], "conclusion" : {"name":"time", "value":"short"}},
+		{"premise":[{"name":"temperature", "value":"hot"}, {"name":"humidity", "value":"wet"}], "conclusion" : {"name":"time", "value":"medium"}},
+		
+		{"premise":[{"name":"temperature", "value":"very cold"}, {"name":"humidity", "value":"normal"}], "conclusion" : {"name":"time", "value":"short"}},
+		{"premise":[{"name":"temperature", "value":"cold"}, {"name":"humidity", "value":"normal"}], "conclusion" : {"name":"time", "value":"medium"}},
+		{"premise":[{"name":"temperature", "value":"normal"}, {"name":"humidity", "value":"normal"}], "conclusion" : {"name":"time", "value":"medium"}},
+		{"premise":[{"name":"temperature", "value":"warm"}, {"name":"humidity", "value":"normal"}], "conclusion" : {"name":"time", "value":"medium"}},
+		{"premise":[{"name":"temperature", "value":"hot"}, {"name":"humidity", "value":"normal"}], "conclusion" : {"name":"time", "value":"long"}},
+		
+		{"premise":[{"name":"temperature", "value":"very cold"}, {"name":"humidity", "value":"dry"}], "conclusion" : {"name":"time", "value":"medium"}},
+		{"premise":[{"name":"temperature", "value":"cold"}, {"name":"humidity", "value":"dry"}], "conclusion" : {"name":"time", "value":"long"}},
+		{"premise":[{"name":"temperature", "value":"normal"}, {"name":"humidity", "value":"dry"}], "conclusion" : {"name":"time", "value":"long"}},
+		{"premise":[{"name":"temperature", "value":"warm"}, {"name":"humidity", "value":"dry"}], "conclusion" : {"name":"time", "value":"long"}},
+		{"premise":[{"name":"temperature", "value":"hot"}, {"name":"humidity", "value":"dry"}], "conclusion" : {"name":"time", "value":"long"}}
+	]
+	},
+	{ "range" : {"start":0,"end":100}
+	}
+	
+	]
+}

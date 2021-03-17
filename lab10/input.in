@@ -1,0 +1,8 @@
+{"inputs":[
+	{"parameters":[ {"name":"humidity", "value":60},{"name":"temperature","value":23}] },
+	{"parameters":[ {"name":"humidity", "value":10},{"name":"temperature","value":30}] },	
+	{"parameters":[ {"name":"humidity", "value":20},{"name":"temperature","value":5}] },	
+	{"parameters":[ {"name":"humidity", "value":20},{"name":"temperature","value":-5}] },	
+	{"parameters":[ {"name":"humidity", "value":80},{"name":"temperature","value":20}] }	
+	]
+}
